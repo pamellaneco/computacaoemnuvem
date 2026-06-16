@@ -1,5 +1,5 @@
 Sistema de Controle de Versão
-Linha que será modificada pelos dois usuários.
+Linha que foi modificada pelo usuario1.
 Usuário 1: Pâmella Kyrla
 Usuário 2: Kawan Torres
 Fim do arquivo.
