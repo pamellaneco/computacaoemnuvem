@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Lista de Tarefas — DevOps</title>
+    <style>
+        body { font-family: sans-serif; max-width: 520px; margin: 48px auto; }
+        input[type=text] { width: 75%; padding: 8px; }
+        button { padding: 8px 16px; background: #2c7; color: #fff; border: 0; cursor: pointer; }
+        ul { padding: 0; }
+        li { list-style: none; padding: 8px 0; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 12px; }
+        .concluida { text-decoration: line-through; color: #aaa; }
+        a { font-size: 0.85em; color: #2c7; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <h1>Lista de Tarefas — DevOps</h1>
+    <form method="post">
+        <input type="text" name="descricao" placeholder="Nova tarefa..." required>
+        <button type="submit">Adicionar</button>
+    </form>
+    <ul>
+        {% for id, descricao, concluida in tarefas %}
+        <li>
+            <span class="{{ 'concluida' if concluida else '' }}">{{ descricao }}</span>
+            {% if not concluida %}
+            <a href="/concluir/{{ id }}">✓ Concluir</a>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
