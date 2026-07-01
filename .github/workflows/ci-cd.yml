@@ -18,7 +18,7 @@ jobs:
         working-directory: todo-app
 
       - name: Executar os testes
-        run: docker run --rm todo-app:ci pytest tests/ -v
+        run: docker run --rm -e PYTHONPATH=/app todo-app:ci pytest tests/ -v
 
   deploy:
     needs: build-and-test
